@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"fmt"
 	"net/url"
 
 	"gopkg.in/telebot.v3"
@@ -42,12 +43,13 @@ func (c *query) getValidArticle(message models.Redirect) *telebot.ArticleResult 
 	if err != nil {
 		return nil
 	}
+	trackerUrl := internal.GetRedirectURL(slug)
 	res := &telebot.ArticleResult{
 		Title:       "Valid URL ✅",
-		Description: "Click to Send wrapped URL",
-		Text:        internal.GetRedirectURL(slug),
+		Description: "Click to Send URL with wrapped link tracker",
+		Text:        fmt.Sprintf("<a href='%s'>%s</a>", trackerUrl, message.URL),
 	}
-	res.SetParseMode(telebot.ModeDefault)
+	res.SetParseMode(telebot.ModeHTML)
 	return res
 }
 

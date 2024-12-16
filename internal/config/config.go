@@ -36,7 +36,7 @@ func LoadConfig(cmd *cobra.Command) error {
 	viper.SetDefault("debug", false)
 	viper.SetDefault("bot.token", "")
 	viper.SetDefault("bot.endpoint", "")
-	viper.SetDefault("bot.verbose", true)
+	viper.SetDefault("bot.verbose", false)
 	viper.SetDefault("bot.listen_port", "8002")
 	viper.SetDefault("db.uri", "")
 	viper.SetDefault("db.name", "")

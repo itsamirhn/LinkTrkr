@@ -15,10 +15,14 @@ func (c *start) Endpoint() string {
 }
 
 func (c *start) Handle(ctx telebot.Context) error {
-	return ctx.Reply(`Welcome to Link Insight Bot! 👋🏻
+	return ctx.Reply(`Welcome to Link Tracker Bot! 👋🏻
 
 Share any URL you'd like to track, and I'll provide you with a unique link that redirects to it. I'll notify you whenever someone clicks on it! 📮
 
-If the link I generate is too long, feel free to shorten it using any URL shortening service.
+Send your URL now! 🚀
+
+Or
+
+Use as inline bot by typing @LinkTrackerBot and then your URL. 🌐
 `)
 }
