@@ -66,7 +66,7 @@ func (b *Bot) HandleRedirectMessage(click models.Click) {
 	url := click.Redirect.URL
 	stat := ""
 	if click.Request.RemoteAddr != "" {
-		stat = fmt.Sprintf("🌐IP: <b>%s</b>\n", click.Request.RemoteAddr)
+		stat = fmt.Sprintf("🌐IP: <b>%s</b>\n", click.Request.Header.Get("X-Forwarded-For"))
 	}
 	if click.Request.UserAgent() != "" {
 		stat += fmt.Sprintf("📱User-Agent: <b>%s</b>\n", click.Request.UserAgent())
