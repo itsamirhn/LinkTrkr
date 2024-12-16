@@ -1,0 +1,52 @@
+version: '3'
+
+env:
+  DEBUG: 'True'
+
+dotenv:
+  - .env
+
+tasks:
+  build:
+    sources:
+      - './**/*.go'
+      - go.mod
+      - go.sum
+    deps: [ mod ]
+    cmds:
+      - go build -o bot
+    generates:
+      - bot
+
+  mod:
+    desc: Downloads and tidy Go modules
+    sources:
+      - go.mod
+      - go.sum
+    cmds:
+      - go mod download
+      - go mod tidy
+
+  lint:
+    desc: Runs golangci-lint
+    aliases: [ l ]
+    sources:
+      - './**/*.go'
+      - .golangci.yml
+    cmds:
+      - golangci-lint run
+
+  lint:fix:
+    desc: Runs golangci-lint and fixes any issues
+    sources:
+      - './**/*.go'
+      - .golangci.yml
+    cmds:
+      - golangci-lint run --fix
+
+  serve:
+    desc: Runs the server
+    deps:
+      - build
+    cmds:
+      - ./bot serve
