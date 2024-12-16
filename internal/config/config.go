@@ -42,6 +42,7 @@ func LoadConfig(cmd *cobra.Command) error {
 	viper.SetDefault("db.name", "")
 	viper.SetDefault("server.listen_port", "8000")
 	viper.SetDefault("server.endpoint", "localhost:8000")
+	viper.SetDefault("jwt.secret", "")
 
 	viper.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
 	viper.AutomaticEnv()
