@@ -3,7 +3,7 @@
 
 ### Have you ever sent someone a URL via email or message and wondered:  
 *"Did they click on it?"*  
-Now, you don’t have to wonder anymore! With **LinkTrkr**, you can easily wrap any long URL into a short, trackable link and get notified when someone clicks on it.
+Now, you don’t have to wonder anymore! With **LinkTrkr**, you can easily wrap any long URL into a trackable link and get notified when someone clicks on it.
 
 ---
 
@@ -25,7 +25,7 @@ Before using the bot inline, make sure to start the bot by sending it a message.
 ### 🌟 Step 2: Use Inline in Telegram  
 1. Open any Telegram chat.  
 2. Type: `@LinkTrkrBot [Your URL]`.  
-3. Instantly get a shortened, trackable link like this: `https://trkr.amirhn.com/r/eyJ...`
+3. Instantly get a trackable link like this:  `https://trkr.amirhn.com/r/eyJhbG...`
 
 Example:  
 ```
@@ -33,6 +33,11 @@ Example:
 ```
 
 The bot will generate a wrapped link that you can share and track.  
+
+---
+
+### ✂️ **Shorten Your Wrapped Link**  
+While the generated link provides tracking capabilities, it may still be long. If you prefer a shorter link, you can use any URL shortening service (e.g., [bit.ly](https://bit.ly), [tinyurl.com](https://tinyurl.com)) to further shorten the wrapped URL.
 
 ---
 
@@ -46,12 +51,12 @@ Ready to track your links and gain valuable insights? Give it a try at [t.me/Lin
 
 ---
 
-## Development
+## 🛠️ Development
 1. Create a bot using [BotFather](https://t.me/BotFather) and paste the token in the `.env` file (or export it as `BOT_TOKEN` environment variable).
 2. Clone the repository.
 3. Install [Task](https://taskfile.dev/installation/) on your system. 
 4. Run `task serve` to start the bot.
 
 
-## License
+## 👮🏻 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
