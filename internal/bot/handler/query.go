@@ -47,7 +47,7 @@ func (c *query) getValidArticle(message models.Redirect) *telebot.ArticleResult 
 		Description: "Click to Send wrapped URL",
 		Text:        internal.GetRedirectURL(slug),
 	}
-	res.SetParseMode(telebot.ModeMarkdown)
+	res.SetParseMode(telebot.ModeDefault)
 	return res
 }
 
